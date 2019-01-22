@@ -50,7 +50,7 @@ fichier_json.close
 #my_hash=Hash[villes.zip(emails)]
 #return my_hash(ville_entree)
 		end
-	def save_as_spreadsheet(spreadsheet)
+	def save_as_spreadsheet(fichier_json)
 		session = GoogleDrive::Session.from_config("config.json")
 
 ws = session.spreadsheet_by_key("pz7Xt1QC-PYx-jrVMJErTcg").worksheets[0]
