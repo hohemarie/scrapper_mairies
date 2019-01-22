@@ -9,9 +9,9 @@ require 'open-uri'
 require '../../db/emails.csv'
 require '../../db/emails.json'
 class Scrapper
-	def save_as_JSON(fichier_json) #capture url des villes du 95
+	def save_as_JSON(url) #capture url des villes du 95
 		#f = File.open("email.JSON","w")
-		url2 = "http://www.annuaire-des-mairies.com/val-d-oise.html"
+		#url2 = "http://www.annuaire-des-mairies.com/val-d-oise.html"
 		doc2 = Nokogiri::HTML(open(url2))
 		adresse2 = doc2.css('.lientxt')
 		noms = []
