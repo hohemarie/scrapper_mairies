@@ -10,6 +10,12 @@ end
 describe "the save as JSON method" do 
 it "should write inside of a email.JSON file" do 
 end
+it "should have a length of hash superior to 100" do
+expect(save_as_JSON(fichier).to eq(fichier.length > 100) #tempHash
+end
+it "should give a hash that has a city name in its keys" do 
+expect(save_as_JSON(fichier)).to eq(fichier.key?("avernes") == true) #ville du val doise #fichier est un hash
+end
 describe "the save as spreadsheet method" do 
 it "should write inside of a Google spreadsheet" do
 expect(save_as_spreadsheet("email.JSON",i)).to eq(["@"].include?())
