@@ -10,6 +10,11 @@ end
 describe "the save as JSON method" do 
 it "should write inside of a email.JSON file" do 
 end
-descrine "the save as spreadsheet method" do 
+describe "the save as spreadsheet method" do 
 it "should write inside of a Google spreadsheet" do
 end
+describe "the save as csv method method" do 
+it "should write inside of a csv file" do 
+expect(save_as_csv("email.JSON",i)).to eq([","].include?(i))
+end
+
