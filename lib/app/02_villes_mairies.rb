@@ -3,8 +3,8 @@ require "google_drive"
 require 'json'
 require 'nokogiri'
 require 'open-uri'
-require '../db/emails.csv'
-require '../db/emails.json'
+require '../../db/emails.csv'
+require '../../db/emails.json'
 class Scrapper
 	def save_as_JSON #capture url des villes du 95
 		f = File.open("email.JSON","w")
