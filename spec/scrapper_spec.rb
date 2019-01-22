@@ -1,27 +1,28 @@
-require_relative "../../spec/scrapper_spec.rb"
-describe "the require line '../../db/emails.jsoné" do
+require_relative "../spec/scrapper_spec.rb"
 
-	it "should load the file situated in the specified path" do
+#describe "the require line '../../db/emails.jsoné" do
 
-		expect("require '../../db/emails.json'").to eq(File.open("../../db/emails.json") 
+#	it "should load the file situated in the specified path" do
 
-	end
+#jjjk		expect("require '../../db/emails.json'").to eq(File.open("../../db/emails.json")) 
 
-end
+#	end
 
-describe "the Scrapper class" do 
+#end
 
-	it "should scrap the city council's web pages to get the email addresses and the names of the cities" do 
+#describe "the Scrapper class" do 
 
-	end
+	#it "should scrap the city council's web pages to get the email addresses and the names of the cities" do 
 
-end
+	#end
+
+#end
 
 describe "the save as JSON method" do 
 
 	it "should write inside of a email.JSON file" do 
 		
-		expect(save_as_JSON(fichier_json).to eq(File.open("../../emails.JSON","w"))
+		expect(save_as_JSON(fichier_json)).to eq(File.open("../../emails.JSON","w"))
 
 	end
 
@@ -72,7 +73,7 @@ describe "the save as spreadsheet method" do
 	
 	end
 	
-	it "should make the cells on the right column contain "@" symbols" do 
+	it "should make the cells on the right column contain @ symbols" do 
 
 		expect(save_as_spreadsheet(sheet)).to eq(['@'].include?(sheet.cell(2,3)))
 

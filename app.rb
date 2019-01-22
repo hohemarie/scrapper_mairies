@@ -1,3 +1,11 @@
+require 'bundler'
+Bundler.require
+
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'scrapper'
+
+Scrapper.new.perform
+
 require "google_drive"
 session = GoogleDrive::Session.from_config("config.json")
 #ouvrir un spreadsheet à partir de ruby 
