@@ -81,7 +81,7 @@ def save_as_csv
 File.foreach ('email.JSON') do |line|
 	ligne=line.split(" ")
 	ligne2=ligne.delete("=>")
-	h.puts(ligne2[0],',',ligne2[1..ligne2.length])
+	h.puts(ligne2[0]+','+ligne2[1..ligne2.length]+'\n')
 h.close
 
 end
@@ -92,4 +92,4 @@ end
 p ws.rows
 
 ws.reload
-	end
+end
