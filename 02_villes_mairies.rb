@@ -43,6 +43,9 @@ end
 #my_hash=Hash[villes.zip(emails)]
 #return my_hash(ville_entree)
 		end
+	def save_as_spreadsheet
+		
+	end
 	end
 	
 
