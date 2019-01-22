@@ -9,7 +9,7 @@ require 'open-uri'
 require '../../db/emails.csv'
 require '../../db/emails.json'
 class Scrapper
-	def save_as_JSON #capture url des villes du 95
+	def save_as_JSON(fichier_json) #capture url des villes du 95
 		#f = File.open("email.JSON","w")
 		url2 = "http://www.annuaire-des-mairies.com/val-d-oise.html"
 		doc2 = Nokogiri::HTML(open(url2))
@@ -41,16 +41,16 @@ class Scrapper
 	
 		end
 tempHash=Hash[villes.zip(emails)]
-File.open("email.JSON","w") do |f|
-	f.write(tempHash.to_json)
+File.open("email.JSON","w") do |fichier_json|
+	fichier_json.write(tempHash.to_json)
 end
-f.close
+fichier_json.close
 		#Hash[villes.zip(emails)].each do |ville,email|
 			#f.puts(ville+" => "+email)
 #my_hash=Hash[villes.zip(emails)]
 #return my_hash(ville_entree)
 		end
-	def save_as_spreadsheet
+	def save_as_spreadsheet(spreadsheet)
 		session = GoogleDrive::Session.from_config("config.json")
 
 ws = session.spreadsheet_by_key("pz7Xt1QC-PYx-jrVMJErTcg").worksheets[0]
