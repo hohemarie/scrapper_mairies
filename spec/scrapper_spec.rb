@@ -50,7 +50,7 @@ describe "the save as spreadsheet method" do
 	
 	it "should open and write into a spreadsheet without returning the spreadsheet empty" do
 		
-		expect(save_as_spreadsheet(sheet)).to eq(empty?(sheet)==false)
+		expect(save_as_spreadsheet('email.JSON')).to eq(empty?(sheet)==false)
 	
 	end
 end
