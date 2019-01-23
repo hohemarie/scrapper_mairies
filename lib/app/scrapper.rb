@@ -55,7 +55,7 @@ class Scrapper
     lin1=2
     col2=2
     lin2=2
-    File.foreach( fichier_json ) do |line|
+    File.foreach(fichier_json) do |line|
       ligne=line.split("=>")
       ws[lin1,col1] = ligne[0]
       ws[lin2,col2] = ligne[1]
