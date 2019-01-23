@@ -10,13 +10,13 @@ describe "the save as JSON method" do
 
 	it "should have a length of hash superior to 100" do
 		
-		expect(save_as_JSON(fichier_json)).to eq(self.length > 100)
+		expect(save_as_JSON("http://www.annuaire-des-mairies.com/val-d-oise.html")).to eq(self.length > 100)
 	
 	end
 	
 	it "should give a hash that has a city name in its keys" do 
 		
-		expect(save_as_JSON(fichier_json)).to eq(fichier_json.key?("avernes") == true) #ville du val doise #fichier est un hash
+		expect(save_as_JSON("http://www.annuaire-des-mairies.com/val-d-oise.html")).to eq(fichier_json.key?("avernes") == true) #ville du val doise #fichier est un hash
 	
 	end
 
@@ -26,25 +26,25 @@ describe "the save as spreadsheet method" do
 	
 	it "should write inside of a Google spreadsheet several lines of data" do 
 		
-		expect(save_as_spreadsheet(sheet)).to eq(sheet.last_row>50)#require 'roo'
+		expect(save_as_spreadsheet("email.JSON")).to eq(sheet.last_row>50)#require 'roo'
 	
 	end
 	
 	it "should write the name of city councils and email addresses on two columns next to each other" do 
 		
-		expect(save_as_spreadsheet(sheet)).to eq(sheet.last_column-sheet.first_column==1)
+		expect(save_as_spreadsheet("email.JSON")).to eq(sheet.last_column-sheet.first_column==1)
 	
 	end
 
 	it "should write name of cities in the first column of the data file" do
 		
-		expect(save_as_spreadsheet(sheet)).to eq(liste_de_villes.include?(sheet.cell(20,2))==true)
+		expect(save_as_spreadsheet("email.JSON")).to eq(liste_de_villes.include?(sheet.cell(20,2))==true)
 	
 	end
 	
 	it "should make the cells on the right column contain @ symbols" do 
 
-		expect(save_as_spreadsheet(sheet)).to eq(['@'].include?(sheet.cell(2,3)))
+		expect(save_as_spreadsheet("email.JSON")).to eq(['@'].include?(sheet.cell(2,3)))
 
 	end
 	
