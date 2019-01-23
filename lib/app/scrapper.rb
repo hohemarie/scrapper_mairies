@@ -56,12 +56,12 @@ fichier_json.close
 ws = session.spreadsheet_by_key("pz7Xt1QC-PYx-jrVMJErTcg").worksheets[0]
 
 p ws[2, 1]
-g = File.open('email.JSON','w')
+g = File.open(fichier_json,'w')
 col1=1
 lin1=2
 col2=2
 lin2=2
-File.foreach( 'email.JSON' ) do |line|
+File.foreach( fichier_json ) do |line|
 	ligne=line.split("=>")
 	ws[lin1,col1] = ligne[0]
 	ws[lin2,col2] = ligne[1]
@@ -79,9 +79,9 @@ end
 	(1..ws._num_cols).each do |col|
 		p ws[row, col]
 	end
-def save_as_csv
+def save_as_csv(fichier_json)
 	h = File.open("email.csv","a")
-File.foreach ('email.JSON') do |line|
+File.foreach (fichier_json) do |line|
 	ligne=line.split(" ")
 	ligne2=ligne.delete("=>")
 	h.puts(ligne2[0]+','+ligne2[1..ligne2.length]+'\n')
