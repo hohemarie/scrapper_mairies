@@ -1,42 +1,12 @@
 require_relative "../spec/scrapper_spec.rb"
 
-#describe "the require line '../../db/emails.jsoné" do
-
-#	it "should load the file situated in the specified path" do
-
-#jjjk		expect("require '../../db/emails.json'").to eq(File.open("../../db/emails.json")) 
-
-#	end
-
-#end
-
-#describe "the Scrapper class" do 
-
-	#it "should scrap the city council's web pages to get the email addresses and the names of the cities" do 
-
-	#end
-
-#end
-
 describe "the save as JSON method" do 
 
 	it "should write inside of a email.JSON file" do 
 		
-		expect(save_as_JSON(fichier_json)).to eq(File.open("../../emails.JSON","w"))
+		expect(save_as_JSON("http://www.annuaire-des-mairies.com/val-d-oise.html")).to eq(File.open("../../emails.JSON","w"))
 
 	end
-
-	it "should take the name of the file and its path in the input" do 
-
-		expect(save_as_JSON(fichier_json)).to eq(fichier_json="email.JSON")
-
-	end
-
-#	it "should write a hash into a file in the output all the hash in one row" do
-
-#		expect(save_as_JSON(fichier_json)).to eq(self.length > 100)
-
-#	end
 
 	it "should have a length of hash superior to 100" do
 		
