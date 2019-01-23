@@ -57,15 +57,15 @@ end
 
 describe "the save as csv method" do 
 	
-	it "should write several lines inside of a csv file" do 
+	it "should write several lines inside of a csv file/the csv file should contain several lines of text" do 
 		
-		expect(save_as_csv("email.JSON")).to eq(File.open("email.JSON") {|f| f.read.count("\n")>100})
+		expect(save_as_csv("email.JSON")).to eq(File.open("email.csv") {|f| f.read.count("\n")>100})
 
 	end
 	
 	it 'should write several lines and separate the data with commas, one by line' do
 		
-		expect(save_as_csv('email.JSON')).to eq(File.open('email.JSON') {|f| f.read.count(",")>100}) 
+		expect(save_as_csv('email.JSON')).to eq(File.open('email.csv') {|f| f.read.count(",")>100}) 
 	
 	end
 
